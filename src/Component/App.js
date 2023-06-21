@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Cookies from '../cookies';
 import Spotify from '../spotify';
 import './CSS/App.css';
@@ -100,11 +100,7 @@ function App() {
         }
     } 
 
-    if (!initialized) {
-        const start = Date.now()
-        initialize();
-        console.log(`Completed initialization in ${Date.now() - start} ms.`)
-    }
+    useEffect(() => initialize, []);
 
     return (
         <div className='App'>
@@ -129,7 +125,6 @@ function App() {
             </div>
             {displayCookieNotice && <div><CookieNotice okPressHandler={enableCookies} declinePressHandler={declineCookies} /></div>}
         </div>
-        
     );
 }
 

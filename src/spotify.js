@@ -1,7 +1,7 @@
 import Cookies from "./cookies";
 
 const clientID = '83021feb723f4588968ffa2f55488860';
-const redirectURI = 'http://localhost:3000'//'https://c-bohling.github.io/jammming';
+const redirectURI = 'https://c-bohling.github.io/jammming'; //'http://localhost:3000'
 const pageLoadTime = Date.now();
 
 let accessToken;
